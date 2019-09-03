@@ -1,0 +1,20 @@
+Exercice 4 :
+
+1) 	true
+	false
+	
+	ça compare les adresses de la chaine de charactères s2=s1 copie l'adresse de s1 dans s2, les deux pointes vers la mêmes case mémoires
+	s3 = ne String(s1) construit une nouvelle chaine de charactères en copiant le contenu de s1
+
+2) 	pour comparer deux string on doit utiliser la méthode equals() 
+	ex: s1.equal(s2)
+	
+3)	true -> les chaine de caractére déclarer via une chaine liétérale sont stocker dans une mémoire qui donne la même adresse à deux chaine identiques pour économiser de 
+	l'espace mémoire.
+	
+4)  la classe string à des fonctionalitées particutlières qui serait compromise en cas d'héritage de la clasee
+
+5)	hello
+	HELLO
+	
+	La méthode toUpperCase() renvoie une copi de la chaine avec tout les caractères en majuscule.
