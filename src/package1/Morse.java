@@ -15,14 +15,14 @@ public class Morse {
 	/**
 	 * @param args
 	 */
+	private final String STOP = "Stop";
+	
 	public static void main(String[] args) {
 		
-		/*
+		Morse m = new Morse();
 		//Question 1 
-		for(String arg:args) {
-			System.out.print(arg + " Stop. ");
-		}
-		*/
+		//m.displayMorse1(args);
+		
 		
 		/*
 		 * Question 2
@@ -30,21 +30,72 @@ public class Morse {
 		 * The class String builder allow to edit a String from different parts
 		 */
 		
+		//Question 3
+		m.displayMorse2(args);
 		
-		
+		/*
+		* We have to use StringBuilder.append() instead of operator + when the creation of the string takes multiple steps
+		*/
+	}
+	
+	/**
+	 * 
+	 * @param words
+	 */
+	public void displayMorse1(String[] words) {
+		for(String word:words) {
+			System.out.print(word + STOP);
+		}
+	}
+	
+	/**
+	 * 
+	 * @param words
+	 */
+	public void displayMorse2(String[] words) {
 		//Question 3
 		
 		StringBuilder str = new StringBuilder();
-		
-		for(String arg:args) {
-			str.append(arg);
+				
+		for(String word:words) {
+			str.append(words);
 			str.append(" Stop. ");
 		}
-		
+				
 		System.out.print(str.toString()); // only one call of print -> faster	
+				
 		
-		/*
-		 * We have to use StringBuilder.append() instead of operator + when the creation of the string takes multiple steps
-		 */
 	}
+
+	@Override
+	public String toString() {
+		return "Morse []";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((STOP == null) ? 0 : STOP.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Morse other = (Morse) obj;
+		if (STOP == null) {
+			if (other.STOP != null)
+				return false;
+		} else if (!STOP.equals(other.STOP))
+			return false;
+		return true;
+	}
+	
+	
 }
