@@ -1,5 +1,7 @@
 package package1;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Thomas LINTANF
@@ -7,9 +9,39 @@ package package1;
  */
 public class SumFromString {
 
+	private int[] numbers;
+	private int sum;
+	
 	@Override
 	public String toString() {
 		return "SumFromString []";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(numbers);
+		result = prime * result + sum;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SumFromString other = (SumFromString) obj;
+		if (!Arrays.equals(numbers, other.numbers))
+			return false;
+		if (sum != other.sum)
+			return false;
+		return true;
 	}
 
 
@@ -18,20 +50,18 @@ public class SumFromString {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		SumFromString sfm = new SumFromString();
 		
-		int[] numbers = parse(args); // Convert string array to integer array
-		int sum = sum(numbers); // integers sum calculation
+		sfm.parse(args); // Convert string array to integer array
+		 
 
 		//Display integer array method 1 :
-		for(int number:numbers) {
-			System.out.println(number);
-		}
-		
+		sfm.display1();
 		//Display integer array method 2 :
-		System.out.println(java.util.Arrays.toString(numbers));
+		sfm.display2();
 		
 		//Display sum result
-		System.out.print("Total sum : " + sum);
+		System.out.print("Total sum : " + sfm.sum());
 	}
 	
 	
@@ -41,16 +71,16 @@ public class SumFromString {
 	 * @param numberStrings
 	 * @return array of integers 
 	 */
-	public static int[] parse(String[] numberStrings){
+	public int[] parse(String[] numberStrings){
 		int length = numberStrings.length;
-		int[] numberList = new int[length];
+		numbers = new int[length];
 		
 		for(int cpt = 0; cpt < numberStrings.length; cpt++) {
-			numberList[cpt] = java.lang.Integer.parseInt(numberStrings[cpt]); 
+			numbers[cpt] = java.lang.Integer.parseInt(numberStrings[cpt]); 
 		}
 		
 		
-		return numberList;
+		return numbers;
 	}
 	
 	/**
@@ -58,9 +88,8 @@ public class SumFromString {
 	 * @param numbers array of integers
 	 * @return sum
 	 */
-	public static int sum(int[] numbers) {
-		
-		int sum = 0;
+	public int sum() {	
+		sum = 0;
 		for(int number:numbers) {
 			sum+=number;
 		}
@@ -68,4 +97,14 @@ public class SumFromString {
 		return sum;
 	}
 
+	public void display1() {
+		for(int number:numbers) {
+			System.out.println(number);
+		}
+		
+	}
+	
+	public void display2() {
+		System.out.println(java.util.Arrays.toString(numbers));
+	}
 }
