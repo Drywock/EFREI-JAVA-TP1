@@ -1,4 +1,4 @@
-package package1;
+package exercice2;
 
 /**
  * @author Thomas LINTANF, Gabriel RIBIER
@@ -11,8 +11,8 @@ public class Calc {
 	/**
 	 * @param args
 	 */
-	private int valueA,valueB;
-	private Scanner scanner;
+	private int valueA,valueB; //Variables valueA and valueB are Integers
+	private Scanner scanner; //Variable scanner is a Scanner.
 	
 	public Calc() {
 		scanner = new Scanner(System.in);

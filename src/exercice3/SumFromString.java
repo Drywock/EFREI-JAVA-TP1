@@ -1,10 +1,10 @@
-package package1;
+package exercice3;
 
 import java.util.Arrays;
 
 /**
  * 
- * @author Thomas LINTANF
+ * @author Thomas LINTANF, Gabriel RIBIER
  *
  */
 public class SumFromString {
@@ -64,10 +64,13 @@ public class SumFromString {
 		System.out.print("Total sum : " + sfm.sum());
 	}
 	
+	//Question 2:
+	//A static method can be called without the need for an existing instance of the class
 	
 	/**
 	 * Extract integers from a string array.
-	 * throw an exception if the string does not contain an Integer
+	 * Question 3:
+	 * Trigger an exception if the string does not contain an Integer
 	 * @param numberStrings
 	 * @return array of integers 
 	 */
@@ -88,6 +91,7 @@ public class SumFromString {
 	 * @param numbers array of integers
 	 * @return sum
 	 */
+	//Question 4:
 	public int sum() {	
 		sum = 0;
 		for(int number:numbers) {

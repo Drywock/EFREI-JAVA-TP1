@@ -1,10 +1,7 @@
-/**
- * 
- */
-package package1;
+package exercice5;
 
 /**
- * @author Thomas LINTANF
+ * @author Thomas LINTANF, Gabriel RIBIER
  *
  */
 
@@ -15,7 +12,7 @@ public class Morse {
 	/**
 	 * @param args
 	 */
-	private final String STOP = "Stop";
+	private final String STOP = " Stop. ";
 	
 	public static void main(String[] args) {
 		
@@ -25,15 +22,16 @@ public class Morse {
 		
 		
 		/*
-		 * Question 2
+		 * Question 2:
 		 * 
 		 * The class String builder allow to edit a String from different parts
 		 */
 		
-		//Question 3
+		//Question 3:
 		m.displayMorse2(args);
 		
 		/*
+		* Question 4:
 		* We have to use StringBuilder.append() instead of operator + when the creation of the string takes multiple steps
 		*/
 	}
@@ -59,7 +57,7 @@ public class Morse {
 				
 		for(String word:words) {
 			str.append(words);
-			str.append(" Stop. ");
+			str.append(STOP);
 		}
 				
 		System.out.print(str.toString()); // only one call of print -> faster	
