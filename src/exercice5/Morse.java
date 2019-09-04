@@ -56,7 +56,7 @@ public class Morse {
 		StringBuilder str = new StringBuilder();
 				
 		for(String word:words) {
-			str.append(words);
+			str.append(word);
 			str.append(STOP);
 		}
 				
