@@ -1,7 +1,7 @@
 package package1;
 
 /**
- * @author Thomas LINTANF
+ * @author Thomas LINTANF, Gabriel RIBIER
  *
  */
 import java.util.Scanner; // indicate where is the Scanner class for the compilation
